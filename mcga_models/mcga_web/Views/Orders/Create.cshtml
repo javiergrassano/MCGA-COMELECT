@@ -1,0 +1,50 @@
+﻿@model Order
+
+<link href="~/Content/Carrito.css" rel="stylesheet" />
+
+<section is="artistsSection">
+    <div class="row content container">
+        <h1>Orden de compra #@Model.orderNumber.ToString("00000000")</h1>
+        <div class="carrito-container">
+
+            <div class="carrito-titulo">
+                Items
+            </div>
+
+            @foreach (var item in Model.items)
+            {
+                string imagenFile = Url.Content($"/public/pictures/{item.product.image}");
+                <div class="carrito-item">
+
+                    <div class="carrito-imagen">
+                        <img src="@imagenFile" />
+                    </div>
+
+                    <div class="carrito-descripcion">
+                        <span>
+                            @Html.DisplayFor(modelItem => item.product.title)
+                        </span>
+                        <span>
+                            @Html.DisplayFor(modelItem => item.product.artist.fullName)
+                        </span>
+                    </div>
+
+                    <div class="carrito-cantidad">
+                        <span id="quantity_@item.productId">@item.quantity</span>
+                    </div>
+
+                    <div class="carrito-precio-total">
+                        @* @Html.DisplayFor(modelItem => item.price)*@
+                        $<span id="total_@item.productId">@item.total</span>
+                    </div>
+                </div>
+            }
+            <div class="carrito-totales">
+                Total
+                $<span id="cart_total">@Model.totalPrice</span>
+            </div>
+
+        </div>
+    </div>
+    
+</section>

@@ -1,0 +1,188 @@
+﻿@{
+    var mostSelled = ViewBag.mostSelled;
+    var bestRanked = ViewBag.bestRanked;
+    string imagenFile = "";
+}
+<link href="~/Content/Galeria.css" rel="stylesheet" />
+<link href="~/Content/Carrito.css" rel="stylesheet" />
+
+<div>
+    <img class="img-home" style="width:100%;margin-top:30px;" src="~/public/pictures/parthenon.jpg" />
+</div>
+
+@*
+    <section id="sec00">
+        <div style="min-height: 0px;" class="row content">
+            <h1>Bienvenidos</h1>
+            <p>
+                ART EXPRESS es un espacio para la exhibición, promoción y venta online de arte. Todas las obras poseen garantía y certificado de autenticidad.
+                Contamos con una amplia selección de obras que recorren desde el Arte Clásico al Moderno y Contemporáneo en sus diferentes manifestaciones. Desde Grandes Maestros a destacados Artistas jóvenes.
+                <br />Ofrecemos asesoramiento tanto para coleccionistas como para inversionistas, brindando lo mejor para el diseño de sus espacios.
+            </p>
+        </div>
+    </section>*@
+<div class="about-container">
+    <div class="inner-container">
+        <h1>Bienvenidos</h1>
+        <p>
+            ART EXPRESS es un espacio para la exhibición, promoción y venta online de arte. Todas las obras poseen garantía y certificado de autenticidad.
+            Contamos con una amplia selección de obras que recorren desde el Arte Clásico al Moderno y Contemporáneo en sus diferentes manifestaciones. Desde Grandes Maestros a destacados Artistas jóvenes.
+            <br />Ofrecemos asesoramiento tanto para coleccionistas como para inversionistas, brindando lo mejor para el diseño de sus espacios.
+        </p>
+    </div>
+</div>
+<section id="sec01">
+    <div class="row content">
+        <h1>Productos más vendidos</h1>
+
+        <div class="content-cards">
+
+            @{int counter1 = 1; }
+            @foreach (Product item in mostSelled)
+            {
+                imagenFile = $"public/pictures/{item.image}";
+                <div class="artistCard" style="background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%),
+                radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);" onclick="AddProduct(@item.id,1)">
+
+                    <div style="font-size:60px;position:relative;text-align:center;" class="photo artistPhoto">
+                        <div style="position: absolute;top: 90%;left: 50%;transform: translate(-50%, -20%);" class="">
+                            @counter1
+                            @{counter1++;}
+                        </div>
+                    </div>
+                    <div style="margin-top:70px;">
+                        <img style="height:100px;border: 1px solid white;" class="photo artistPhoto" src="@imagenFile" />
+                    </div>
+
+                    <div class="name">
+                        <span style="font-size:25px; color:black;">
+                            @item.title<br />
+                        </span>
+                        <!--
+                        <span>
+                            @item.artist.fullName
+                        </span>
+                        <span>
+                            $@item.price
+                        </span>
+                        -->
+                        <span style="margin-bottom: 40px; font-size:20px; color: yellow; text-shadow: 1px 1px #808080;">
+                            @item.quantitySold Ventas
+                        </span>
+                    </div>
+
+
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+
+<section id="sec02">
+    <div class="row content">
+        <h1>Productos mejor rankeados</h1>
+
+        <div class="content-cards">
+
+            @{int counter2 = 1; }
+            @foreach (Product item in bestRanked)
+            {
+                imagenFile = $"public/pictures/{item.image}";
+                string star = $"public/star{item.avgStars.ToString("n0")}.png";
+                <div class="artistCard" style="background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%),
+                radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);" onclick="AddProduct(@item.id,1)">
+
+                    <div style="font-size:60px;position:relative;text-align:center;" class="photo artistPhoto">
+                        <div style="position: absolute;top: 90%;left: 50%;transform: translate(-50%, -20%);" class="">
+                            @counter2
+                            @{counter2++;}
+                        </div>
+                    </div>
+                    <div style="margin-top:70px;">
+                        <img style="height:100px;border: 1px solid white;" class="photo artistPhoto" src="@imagenFile" />
+                    </div>
+
+                    <div class="name">
+                        <span style="font-size:25px; color:black;">
+                            @item.title
+                        </span>
+                        <!--
+                        <span>
+                            @item.artist.fullName
+                        </span>
+                        <span>
+                            $@item.price
+                        </span>
+                        -->
+                        <span>
+                            <img src="@star" />
+                        </span>
+                    </div>
+
+                </div>
+            }
+
+        </div>
+    </div>
+</section>
+
+
+
+<section id="sec03">
+    <div class="row content">
+        @*<p>Alumnos de la facultad de Ingenieria de la Universidad Abierta Inteamericana. Sede Castelar</p>
+            <p>
+                Materia: Lenguaje de Programación Para la Administración<br />
+                Profesor: Victor Contreras.
+                Año: 2020
+            </p>
+            <p>
+                <a href="#">Cortes, Hernan</a><br>
+                <a href="#">Grassano, Javier</a><br>
+                <a href="#">Zalazar, Agustin</a><br>
+            </p>*@
+        <div class="inner-width">
+            <h1>Integrantes</h1>
+            <h3>
+                Proyecto Web: Galería de Arte
+            </h3>
+            <div class="team">
+                <!--integrante 1-->
+                <div class="integrante">
+                    <div class="integrante-letra">
+                        <h3 class="letra"><strong>A</strong></h3>
+                    </div>
+                    <div class="integrante-nombre">Agustin Zalazar</div>
+                    <div class="integrante-descripcion">
+                        Alumno de la facultad de Ingenieria de la Universidad Abierta Inteamericana. Sede Castelar <br />
+                        <a href="mailto:agustin.zalazar@outlook.com" style="color:black;font-weight: bold;"><strong>Contactar</strong></a>
+                    </div>
+                </div>
+                <!--integrante 2-->
+                <div class="integrante">
+                    <div class="integrante-letra">
+                        <h3 class="letra"><strong>J</strong></h3>
+                    </div>
+                    <div class="integrante-nombre">Javier Grassano</div>
+                    <div class="integrante-descripcion">
+                        Alumno de la facultad de Ingenieria de la Universidad Abierta Inteamericana. Sede Castelar<br />
+                        <a href="mailto:javiergrassano@hotmail.com" style="color:black;font-weight: bold;">Contactar</a>
+                    </div>
+                </div>
+                <!--integrante 3-->
+                <div class="integrante">
+                    <div class="integrante-letra">
+                        <h3 class="letra"><strong>H</strong></h3>
+                    </div>
+                    <div class="integrante-nombre">Hernan Cortes</div>
+                    <div class="integrante-descripcion">
+                        Alumno de la facultad de Ingenieria de la Universidad Abierta Inteamericana. Sede Castelar<br />
+                        <a href="mailto:hernancorteshc@hotmail.com" style="color:black;font-weight: bold;">Contactar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>

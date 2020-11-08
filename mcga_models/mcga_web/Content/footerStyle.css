@@ -1,0 +1,23 @@
+﻿.footer {
+    clear: both;
+    position: relative;
+    float: none;
+    background-color: #2f2f2f;
+    height: 400px;
+    margin-top: -400px;
+    padding: 5px 0;
+}
+
+footer h4{
+    font-size: larger;
+    margin:0;
+    padding:0;
+    color:yellow;
+
+}
+
+    footer p {
+        color: #2f2f2f;
+        text-align: left;
+    }
+

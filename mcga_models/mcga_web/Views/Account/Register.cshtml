@@ -1,0 +1,42 @@
+﻿@model ArtExWeb.Models.RegisterViewModel
+@{
+}
+
+    <section id="loginForm">
+        <div class="row content container">
+            <h1>Crear nuevo usuario</h1>
+            <div class="accesoForm">
+                <!--
+                <span class="title">
+                    Crear una nueva cuenta
+                </span>
+                    <hr />
+                -->
+                @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                {
+                    @Html.AntiForgeryToken()
+                    
+                    @Html.ValidationSummary("", new { @class = "text-danger" })
+                <div>
+                    <label>Email</label><br />
+                    @Html.TextBoxFor(m => m.Email, new { @placeholder = "Ingrese su email" })
+                </div>
+                <div>
+                    <label>Contraseña</label><br />
+                    @Html.PasswordFor(m => m.Password, new { @placeholder = "Ingrese su contraseña" })
+                </div>
+                <div>
+                    <label>Confirmar contraseña</label><br />
+                    @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" , @placeholder = "Confirme su contraseña" })
+                </div>
+                    <div>
+                        <br />
+                        <input type="submit" value="Registrar" />
+                    </div>
+                }
+
+
+            </div>
+        </div>
+    </section>
+

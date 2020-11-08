@@ -1,0 +1,62 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30413.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01 - core", "01 - core", "{D380443C-E757-441A-B78D-A40A184E1F51}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02 - business", "02 - business", "{0107B46B-AD77-4721-B035-A3029D94BCC8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03 - services", "03 - services", "{A78ADB36-A9E8-4301-8C45-C6CF6799E323}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mcga_dal", "mcga_dal\mcga_dal.csproj", "{E7F100B2-F014-41C7-BF8F-BFD1014D73CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mcga_business", "mcga_business\mcga_business.csproj", "{D7AF3668-C44D-4078-9853-F4A8401E4EBC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mcga_api", "mcga_api\mcga_api.csproj", "{3B0622F0-F30D-4C6E-97FE-8A11037DCAE1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mcga_models", "..\mcga-comweb-frontend\mcga_models\mcga_models.csproj", "{010B2CF2-B052-4BEA-8CFD-0FE00EABAB86}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mcga_tools", "mcga_tools\mcga_tools.csproj", "{3AE846FA-C0A3-41ED-ADD9-89947757C494}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E7F100B2-F014-41C7-BF8F-BFD1014D73CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7F100B2-F014-41C7-BF8F-BFD1014D73CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7F100B2-F014-41C7-BF8F-BFD1014D73CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7F100B2-F014-41C7-BF8F-BFD1014D73CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7AF3668-C44D-4078-9853-F4A8401E4EBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7AF3668-C44D-4078-9853-F4A8401E4EBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7AF3668-C44D-4078-9853-F4A8401E4EBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7AF3668-C44D-4078-9853-F4A8401E4EBC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B0622F0-F30D-4C6E-97FE-8A11037DCAE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B0622F0-F30D-4C6E-97FE-8A11037DCAE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B0622F0-F30D-4C6E-97FE-8A11037DCAE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B0622F0-F30D-4C6E-97FE-8A11037DCAE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{010B2CF2-B052-4BEA-8CFD-0FE00EABAB86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{010B2CF2-B052-4BEA-8CFD-0FE00EABAB86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{010B2CF2-B052-4BEA-8CFD-0FE00EABAB86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{010B2CF2-B052-4BEA-8CFD-0FE00EABAB86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3AE846FA-C0A3-41ED-ADD9-89947757C494}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AE846FA-C0A3-41ED-ADD9-89947757C494}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AE846FA-C0A3-41ED-ADD9-89947757C494}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AE846FA-C0A3-41ED-ADD9-89947757C494}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E7F100B2-F014-41C7-BF8F-BFD1014D73CE} = {D380443C-E757-441A-B78D-A40A184E1F51}
+		{D7AF3668-C44D-4078-9853-F4A8401E4EBC} = {0107B46B-AD77-4721-B035-A3029D94BCC8}
+		{3B0622F0-F30D-4C6E-97FE-8A11037DCAE1} = {A78ADB36-A9E8-4301-8C45-C6CF6799E323}
+		{010B2CF2-B052-4BEA-8CFD-0FE00EABAB86} = {0107B46B-AD77-4721-B035-A3029D94BCC8}
+		{3AE846FA-C0A3-41ED-ADD9-89947757C494} = {0107B46B-AD77-4721-B035-A3029D94BCC8}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {35325223-91A1-48EB-96F7-EF87730BF38E}
+	EndGlobalSection
+EndGlobal

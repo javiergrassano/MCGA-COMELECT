@@ -1,0 +1,44 @@
+﻿@model IEnumerable<mcga.models.Artist>
+
+@{ 
+    bool isAdmin = User.IsInRole("Admin");
+}
+
+    <section is="artistsSection">
+        <div class="row content container">
+                <h1>Los Artistas</h1>
+            @if (isAdmin)
+            {
+                <p>
+                    @Html.ActionLink("Crear Nuevo", "Create", null, null, new { @class = "boton_amarillo" })
+                </p>
+            }
+            <div class="content-cards">
+                @foreach (var item in Model)
+                {
+                    <div class="artistCard" onclick="window.location.href = '@Url.Action("View", "Artists", new { id = item.id })';">
+                        @{
+                            string imagenFile = $"public/artist_{item.id}.jpg";
+                            if (!File.Exists(Server.MapPath(imagenFile)))
+                            {
+                                imagenFile = $"public/artist_0.jpg";
+                            }
+
+                            string flagFile = $"public/flag_{item.country}.png";
+                        }
+                        <img class="photo artistPhoto" src="@imagenFile" />
+                        <br />
+                        <span class="name">
+                            @Html.DisplayFor(modelItem => item.lastName),
+                            @Html.DisplayFor(modelItem => item.firstName)
+                        </span>
+                        <br />
+                        <span class="detail">
+                            @Html.DisplayFor(modelItem => item.lifeSpan)
+                            @Html.DisplayFor(modelItem => item.country) <img class="flag" src="@flagFile" />
+                        </span>
+                    </div>
+                }
+            </div>
+        </div>
+    </section>
